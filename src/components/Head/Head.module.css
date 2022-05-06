@@ -1,0 +1,82 @@
+.headButton{
+    margin-right: 30px;
+}
+.header{
+    width: 1920px;
+    height: 80px;
+    background: #222629;
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    padding-left: 100px;
+}
+.ul{
+    display: flex;
+}
+.li{
+    display: block;
+}
+.button{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #86C232;
+    border-radius: 17px;
+    background-color: #222629;
+    color: #86C232;
+    cursor: pointer;
+    font-family: Comfortaa, sans-serif;
+}
+.search{
+    width: 300px;
+    height: 26px;
+    border: 1px solid #86C232;
+    border-radius: 17px;
+    background-color: #222629;
+    color: #86C232;
+    padding-left: 15px;
+    outline: none;
+    font-family: Comfortaa, sans-serif;
+}
+.profileButton{
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+.profileLogo{
+    width: 50px;
+    height: 50px;
+}
+.basketLogo{
+    width: 50px;
+    height: 50px;
+}
+.basketButton{
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.buttonGo{
+    width: 120px;
+    height: 20px;
+    border: 1px solid #86C232;
+    border-radius: 17px;
+    background-color: #222629;
+    color: #86C232;
+    cursor: pointer;
+    font-family: Comfortaa, sans-serif;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.buttonReg{
+    width: 120px;
+    height: 20px;
+    border: 1px solid #86C232;
+    border-radius: 17px;
+    background-color: #222629;
+    color: #86C232;
+    cursor: pointer;
+    font-family: Comfortaa, sans-serif;
+    margin-left: 5px;
+}
+
