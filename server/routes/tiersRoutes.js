@@ -1,8 +1,9 @@
 const Router = require("express")
 const router = new Router()
 const tiersController = require('../controllers/tiersController')
+const checkRole = require("../middleware/checkRoleMiddleware");
 
-router.post('/', tiersController.create)
+router.post('/', checkRole('ADMIN'), tiersController.create)
 router.get('/', tiersController.getAll)
 router.get('/:id', tiersController.getOne)
 
