@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import TiersFilter from "./TiersFilter/TiersFilter";
 import Foot from "../../components/Foot/Foot";
 import styles from './Tiers.module.css'
 import CardsTiers from "../../components/CardsTiers/CardsTiers";
-import {addTiersAC} from "../../redux/catalogReducer";
+import {setTiersAC} from "../../redux/catalogReducer";
 import {useDispatch, useSelector} from "react-redux";
+import {fetchTiers} from "../../http/tiersAPI";
+
 
 
 const Tiers = () => {
     const dispatch = useDispatch()
+    useEffect(() => {
+        fetchTiers(1, 3).then(data => dispatch(setTiersAC(data.rows)))
+    }, [])
     const autoTiers = useSelector(state => state.catalog.listTiers)
     const tier = autoTiers.map(oneTiers => <CardsTiers autoTiers={oneTiers}/>)
     return (
@@ -18,7 +23,7 @@ const Tiers = () => {
                 {tier}
             </div>
             <div className={styles.cardsbutton}>
-                <button className={styles.buttonActive} onClick={() => dispatch(addTiersAC())}>1</button>
+                <button className={styles.buttonActive}>1</button>
                 <button className={styles.button}>2</button>
                 <button className={styles.button}>3</button>
                 <button className={styles.button}>4</button>

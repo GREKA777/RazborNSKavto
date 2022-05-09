@@ -6,11 +6,11 @@ const ApiError = require('../error/ApiError')
 class AutoPartController{
     async create(req, res, next){
         try {
-            const {name, num, year, car, engine, run, description, typeId} = req.body
+            const {name, num, year, car, engine, run, description, typeId, price} = req.body
             const {img} = req.files
             let fileName = uuid.v4() + ".jpg"
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
-            const autoPart = await AutoPart.create({name, num, year, car, engine, run, description, typeId, img: fileName})
+            const autoPart = await AutoPart.create({name, num, year, car, engine, run, description, typeId, price, img: fileName})
             return res.json(autoPart)
         } catch (e){
             next(ApiError.badRequest(e.message))

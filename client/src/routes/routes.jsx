@@ -1,7 +1,7 @@
 import {
-    ABOUT_US_ROUTE, BASKET_ROUTE,
+    ABOUT_US_ROUTE, AUTH_ROUTE, BASKET_ROUTE,
     CATALOG_ROUTE,
-    FAVOURITE_ROUTE, HISTORY_ROUTE,
+    FAVOURITE_ROUTE, HISTORY_ROUTE, LOGIN_ROUTE,
     MAIN_ROUTE,
     ONE_ITEM_ROUTE, ONE_ORDER_ROUTE, ORDERS_ROUTE,
     PROFILE_ROUTE,
@@ -18,6 +18,8 @@ import Basket from "../pages/Basket/Basket";
 import History from "../pages/History/History";
 import Orders from "../pages/Orders/Orders";
 import OneOrder from "../pages/OneOrder/OneOrder";
+import Auth from "../pages/Auth/Auth";
+import AuthLogin from "../pages/Auth/AuthLogin/AuthLogin";
 export const publicRoutes = [
     {
         path: MAIN_ROUTE,
@@ -36,7 +38,7 @@ export const publicRoutes = [
         element: <About/>
     },
     {
-        path: ONE_ITEM_ROUTE,
+        path: ONE_ITEM_ROUTE + '/:id',
         element: <OneItem/>
     },
     {
@@ -62,6 +64,14 @@ export const publicRoutes = [
     {
         path: ONE_ORDER_ROUTE,
         element: <OneOrder/>
+    },
+    {
+        path: AUTH_ROUTE,
+        element: <Auth/>
+    },
+    {
+        path: LOGIN_ROUTE,
+        element: <AuthLogin/>
     },
 ]
 export const authRoutes = []
