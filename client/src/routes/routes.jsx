@@ -38,7 +38,7 @@ export const publicRoutes = [
         element: <About/>
     },
     {
-        path: ONE_ITEM_ROUTE + '/:id',
+        path: ONE_ITEM_ROUTE,
         element: <OneItem/>
     },
     {

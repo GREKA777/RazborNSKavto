@@ -1,11 +1,8 @@
+const SET_USER = "SET_USER"
 let initialState = {
     user:
         {
-            id: 1,
-            FIO: "Егор Гречко Вячеславович",
-            email: "egorka.gre4ko2015@gmail.com",
-            phone: "+7 923 777 06 08",
-            role: "Администратор"
+
         },
     listBasket: [
         {
@@ -79,8 +76,13 @@ let initialState = {
 }
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_USER:
+            return {
+                ...state, user: action.user
+            }
         default:
             return state
     }
 }
+export const setUserAC = (user) => ({type: SET_USER, user})
 export default userReducer

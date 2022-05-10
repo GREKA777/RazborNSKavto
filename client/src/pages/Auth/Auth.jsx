@@ -1,21 +1,46 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Auth.module.css'
+import {useDispatch} from "react-redux";
+import {registration} from "../../http/userAPI";
+import {setUserAC} from "../../redux/userReducer";
+import {useNavigate} from "react-router-dom";
+import {MAIN_ROUTE} from "../../utils/const";
 
 const Auth = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const [FIO, setFIO] = useState(" ")
+    const [email, setEmail] = useState(" ")
+    const [password, setPassword] = useState(" ")
+   const regClick = async () => {
+        try {
+       const data = await registration(FIO, email, password)
+       dispatch(setUserAC(data))
+       navigate(MAIN_ROUTE)
+        } catch (e){
+            alert(e.response.data.message)
+        }
+   }
     return (
         <div>
             <div className={styles.auth}>Регистрация</div>
             <div className={styles.plase}>
                 <div>
-                    <input type="text" placeholder={"Введите ФИО"} className={styles.input}/>
+                    <input type="text" placeholder={"Введите ФИО"} className={styles.input} onChange={(e) =>{
+                        setFIO(e.target.value)
+                    }}/>
                 </div>
                 <div>
-                    <input type="text" placeholder={"Введите Email"} className={styles.input}/>
+                    <input type="text" placeholder={"Введите Email"} className={styles.input} onChange={(e) =>{
+                        setEmail(e.target.value)
+                    }}/>
                 </div>
                 <div>
-                    <input type="text" placeholder={"Введите пароль"} className={styles.input}/>
+                    <input type="password" placeholder={"Введите пароль"} className={styles.input} onChange={(e) =>{
+                        setPassword(e.target.value)
+                    }}/>
                 </div>
-                <button className={styles.button}>Зарегистрироваться</button>
+                <button className={styles.button} onClick={regClick}>Зарегистрироваться</button>
             </div>
         </div>
     );
