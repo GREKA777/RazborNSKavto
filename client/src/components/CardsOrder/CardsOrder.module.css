@@ -3,9 +3,8 @@
     height: 260px;
     border: 1px solid #86C232;
     border-radius: 17px;
-    margin-left: 170px;
+    margin-left: 30px;
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 .order{
     width: 220px;
@@ -29,4 +28,7 @@
     font-size: 14px;
     margin-left: 10px;
     margin-top: 5px;
+}
+.cardOrderss{
+    text-decoration: none;
 }

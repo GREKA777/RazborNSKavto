@@ -17,19 +17,29 @@ const Profile = () => {
                 <img src={ya} alt="Фото профиля" className={styles.photoProfile}/>
                 <div className={styles.profileBodyAll}>
                     <div className={styles.profileBodyText}>
-                        <p>ФИО:</p>
-                        <p>Почта:</p>
-                        <p>Телефон:</p>
-                        <p>Роль:</p>
-                        <button className={styles.photoButton}>Изменить фото профиля</button>
-                    </div>
-                    <div className={styles.profileBodyFact}>
-                        <p>{users.FIO}</p>
-                        <p>{users.email}</p>
-                        <p>{users.phone}</p>
-                        <p>{users.role}</p>
+                        <div className={styles.info}>
+                        <p>ФИО: </p>
+                        <p  className={styles.profileBodyFact}>{users.FIO}</p>
+                        </div>
+                        <div className={styles.info}>
+                            <p>Почта: </p>
+                            <p  className={styles.profileBodyFact}>{users.email}</p>
+                        </div>
+                        <div className={styles.info}>
+                            <p>Телефон: </p>
+                            <p  className={styles.profileBodyFact}>{users.phone}</p>
+                        </div>
+                        <div className={styles.info}>
+                            <p>Роль: </p>
+                            <p  className={styles.profileBodyFact}>{users.role}</p>
+                        </div>
+                        <div className={styles.buttons}>
+                            <button className={styles.photoButton}>Изменить фото профиля</button>
                         <button className={styles.editButton}>Редактировать профиль</button>
+
+                        </div>
                     </div>
+
                     <div className={styles.buttonsProfile}>
                         <NavLink to={BASKET_ROUTE}>
                             <button className={styles.buttonsProfilee}>Корзина</button>

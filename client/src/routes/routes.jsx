@@ -42,12 +42,22 @@ export const publicRoutes = [
         element: <OneItem/>
     },
     {
-        path: PROFILE_ROUTE,
-        element: <Profile/>
+        path: ONE_ORDER_ROUTE,
+        element: <OneOrder/>
     },
     {
-        path: FAVOURITE_ROUTE,
-        element: <Favourite/>
+        path: AUTH_ROUTE,
+        element: <Auth/>
+    },
+    {
+        path: LOGIN_ROUTE,
+        element: <AuthLogin/>
+    },
+]
+export const authRoutes = [
+    {
+        path: PROFILE_ROUTE,
+        element: <Profile/>
     },
     {
         path: BASKET_ROUTE,
@@ -62,16 +72,7 @@ export const publicRoutes = [
         element: <Orders/>
     },
     {
-        path: ONE_ORDER_ROUTE,
-        element: <OneOrder/>
-    },
-    {
-        path: AUTH_ROUTE,
-        element: <Auth/>
-    },
-    {
-        path: LOGIN_ROUTE,
-        element: <AuthLogin/>
+        path: FAVOURITE_ROUTE,
+        element: <Favourite/>
     },
 ]
-export const authRoutes = []

@@ -1,5 +1,9 @@
 .headButton{
+    margin-right: 15px;
+}
+.headButtonn{
     margin-right: 30px;
+    margin-left: 20px;
 }
 .header{
     width: 1920px;
@@ -13,12 +17,13 @@
 }
 .ul{
     display: flex;
+    margin-left: 10px;
 }
 .li{
     display: block;
 }
 .button{
-    width: 100px;
+    width: 120px;
     height: 30px;
     border: 1px solid #86C232;
     border-radius: 17px;
@@ -41,7 +46,7 @@
 .profileButton{
     cursor: pointer;
     margin-top: 5px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .profileLogo{
     width: 50px;
@@ -54,10 +59,22 @@
 .basketButton{
     cursor: pointer;
     margin-top: 5px;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 .buttonGo{
     width: 120px;
+    height: 20px;
+    border: 1px solid #86C232;
+    border-radius: 17px;
+    background-color: #222629;
+    color: #86C232;
+    cursor: pointer;
+    font-family: Comfortaa, sans-serif;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.buttonGoo{
+    width: 90px;
     height: 20px;
     border: 1px solid #86C232;
     border-radius: 17px;
@@ -79,7 +96,28 @@
     font-family: Comfortaa, sans-serif;
     margin-left: 5px;
 }
+.buttonOut{
+    width: 90px;
+    height: 20px;
+    border: 1px solid #86C232;
+    border-radius: 17px;
+    background-color: #222629;
+    color: #86C232;
+    cursor: pointer;
+    font-family: Comfortaa, sans-serif;
+    margin-left: 5px;
+}
 .auth{
     display: block;
+}
+.profile{
+    display: flex;
+
+}
+.prof{
+    margin-top: 7px;
+}
+.log{
+    margin-left: 30px;
 }
 

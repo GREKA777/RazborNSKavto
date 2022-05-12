@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './Auth.module.css'
 import {useDispatch} from "react-redux";
 import {registration} from "../../http/userAPI";
-import {setUserAC} from "../../redux/userReducer";
+import {setIsAuthAC, setUserAC} from "../../redux/userReducer";
 import {useNavigate} from "react-router-dom";
 import {MAIN_ROUTE} from "../../utils/const";
 
@@ -16,6 +16,7 @@ const Auth = () => {
         try {
        const data = await registration(FIO, email, password)
        dispatch(setUserAC(data))
+            dispatch(setIsAuthAC(true))
        navigate(MAIN_ROUTE)
         } catch (e){
             alert(e.response.data.message)

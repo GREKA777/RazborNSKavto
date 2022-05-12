@@ -10,7 +10,7 @@ import {setAutopartAC} from "../../redux/catalogReducer";
 const Catalog = () => {
     const dispatch = useDispatch()
     useEffect(() => {
-        fetchAutoParts(1, 3).then(data => dispatch(setAutopartAC(data.rows)))
+        fetchAutoParts(1, 5).then(data => dispatch(setAutopartAC(data.rows)))
     }, [])
     const autoParts = useSelector(state => state.catalog.listAutopart)
     const part = autoParts.map(onePart => <CardsAutopart autoPart={onePart}/>)

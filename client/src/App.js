@@ -5,7 +5,7 @@ import Head from "./components/Head/Head";
 import './App.css'
 import {useDispatch} from "react-redux";
 import {check} from "./http/userAPI";
-import {setUserAC} from "./redux/userReducer";
+import {setIsAuthAC, setUserAC} from "./redux/userReducer";
 import Spinner from "./components/Spinner/Spinner";
 const App = () => {
     const dispatch = useDispatch()
@@ -13,6 +13,7 @@ const App = () => {
     useEffect(() =>{
         check().then(data =>{
             dispatch(setUserAC(data))
+            dispatch(setIsAuthAC(true))
         }).finally(() => {
             setLoading(false)
         })

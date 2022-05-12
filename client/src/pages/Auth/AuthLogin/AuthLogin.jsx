@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './AuthLogin.module.css'
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {setUserAC} from "../../../redux/userReducer";
+import {setIsAuthAC, setUserAC} from "../../../redux/userReducer";
 import {MAIN_ROUTE} from "../../../utils/const";
 import {login} from "../../../http/userAPI";
 
@@ -15,6 +15,7 @@ const AuthLogin = () => {
         try {
             const data = await login(email, password)
             dispatch(setUserAC(data))
+            dispatch(setIsAuthAC(true))
             navigate(MAIN_ROUTE)
         } catch (e){
             alert(e.response.data.message)

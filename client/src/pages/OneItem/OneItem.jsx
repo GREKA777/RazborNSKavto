@@ -10,12 +10,11 @@ import {fetchAutoPart} from "../../http/autoPartAPI";
 import {useParams} from "react-router-dom";
 
 const OneItem = () => {
-    // const dispatch = useDispatch()
-    // useEffect(() => {
-    //     fetchAutoPart({id}).then(data => dispatch(setAutopartAC(data.rows)))
-    // }, [])
     const {id} = useParams()
-    console.log(id)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        fetchAutoPart({id}).then(data => dispatch(setAutopartAC(data.rows)))
+    }, [])
     return (
         <div>
             <ItemPrice/>

@@ -6,7 +6,7 @@ const TiersFilter = () => {
     return (
         <div className={styles.mar}>
             <div className={styles.tiersContent}>
-                <h2 className={styles.tiersName}>Автошины</h2>
+                <h2 className={styles.tiersName}>Шины</h2>
                 <div>
                     <input type="text" placeholder={"Название шин или их номер"} className={styles.searchName}/>
                     <button className={styles.tiersButton}>Поиск</button>

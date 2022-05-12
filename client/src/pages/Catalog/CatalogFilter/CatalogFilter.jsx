@@ -6,7 +6,7 @@ const CatalogFilter = () => {
     return (
         <div className={styles.mar}>
             <div className={styles.catalogContent}>
-            <h2 className={styles.catalogName}>Каталог</h2>
+            <h2 className={styles.catalogName}>Запчасти</h2>
             <div>
                 <input type="text" placeholder={"Название запчасти или её номер"} className={styles.searchName}/>
                 <button className={styles.catalogButton}>Поиск</button>

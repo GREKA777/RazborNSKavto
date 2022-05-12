@@ -1,6 +1,7 @@
 .cardsbutton{
     margin-left: 610px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 .button{
     font-family: 'Russo One';
@@ -25,5 +26,8 @@
     margin-right: 3px;
 }
 .cards{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 155px;
+    margin-right: 155px;
 }

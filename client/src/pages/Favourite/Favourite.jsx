@@ -22,9 +22,9 @@ const Favourite = () => {
             <div className={styles.cards}>
                 {items}
             </div>
-            <button className={styles.buttonDelete}>Удалить</button>
-            <button className={styles.buttonDelete}>Удалить</button>
-            <button className={styles.buttonDelete}>Удалить</button>
+            {/*<button className={styles.buttonDelete}>Удалить</button>*/}
+            {/*<button className={styles.buttonDelete}>Удалить</button>*/}
+            {/*<button className={styles.buttonDelete}>Удалить</button>*/}
             <div className={styles.back}>
                 <button className={styles.buttonPay}>Удалить всё</button>
             </div>

@@ -12,7 +12,7 @@ import {fetchTiers} from "../../http/tiersAPI";
 const Tiers = () => {
     const dispatch = useDispatch()
     useEffect(() => {
-        fetchTiers(1, 3).then(data => dispatch(setTiersAC(data.rows)))
+        fetchTiers(1, 5).then(data => dispatch(setTiersAC(data.rows)))
     }, [])
     const autoTiers = useSelector(state => state.catalog.listTiers)
     const tier = autoTiers.map(oneTiers => <CardsTiers autoTiers={oneTiers}/>)

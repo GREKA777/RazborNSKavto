@@ -22,13 +22,11 @@ const Basket = () => {
             <div className={styles.cards}>
                 {items}
             </div>
-            <button className={styles.buttonDelete}>Удалить</button>
-            <button className={styles.buttonDelete}>Удалить</button>
-            <button className={styles.buttonDelete}>Удалить</button>
+            {/*<button className={styles.buttonDelete}>Удалить</button>*/}
             <div className={styles.back}>
                 <div className={styles.priceDone}>
                     <div className={styles.donePrice}>Итого:</div>
-                    <div className={styles.donePriceDone}>37000</div>
+                    <div className={styles.donePriceDone}>********р</div>
                 </div>
                 <button className={styles.buttonPay}>Оплатить</button>
                 <button className={styles.buttonPay}>Удалить всё</button>
