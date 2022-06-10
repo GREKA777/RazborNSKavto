@@ -14,10 +14,11 @@
     top: 0;
     align-items: center;
     padding-left: 100px;
+    z-index: 160;
 }
 .ul{
     display: flex;
-    margin-left: 10px;
+    margin-left: 70px;
 }
 .li{
     display: block;
@@ -32,38 +33,29 @@
     cursor: pointer;
     font-family: Comfortaa, sans-serif;
 }
-.search{
-    width: 300px;
-    height: 26px;
-    border: 1px solid #86C232;
-    border-radius: 17px;
-    background-color: #222629;
-    color: #86C232;
-    padding-left: 15px;
-    outline: none;
-    font-family: Comfortaa, sans-serif;
-}
 .profileButton{
     cursor: pointer;
     margin-top: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
+
 }
 .profileLogo{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 .basketLogo{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 }
 .basketButton{
     cursor: pointer;
     margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 30px;
 }
 .buttonGo{
     width: 120px;
-    height: 20px;
+    height: 25px;
     border: 1px solid #86C232;
     border-radius: 17px;
     background-color: #222629;
@@ -74,8 +66,8 @@
     margin-left: 5px;
 }
 .buttonGoo{
-    width: 90px;
-    height: 20px;
+    width: 120px;
+    height: 25px;
     border: 1px solid #86C232;
     border-radius: 17px;
     background-color: #222629;
@@ -87,7 +79,7 @@
 }
 .buttonReg{
     width: 120px;
-    height: 20px;
+    height: 25px;
     border: 1px solid #86C232;
     border-radius: 17px;
     background-color: #222629;
@@ -97,8 +89,8 @@
     margin-left: 5px;
 }
 .buttonOut{
-    width: 90px;
-    height: 20px;
+    width: 120px;
+    height: 25px;
     border: 1px solid #86C232;
     border-radius: 17px;
     background-color: #222629;

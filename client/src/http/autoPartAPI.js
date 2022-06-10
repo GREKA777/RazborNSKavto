@@ -6,12 +6,18 @@ export const createAutoPart = async(autoPart) => {
     return data
 }
 
-export const fetchAutoParts = async(page, limit, car, typeId) => {
-    const {data} = await $host.get("api/autoPart", {params: {page, limit, car, typeId}})
+export const fetchAutoParts = async(page, limit, name, car, typeId, sort) => {
+    const {data} = await $host.get("api/autoPart", {params: {page, limit, name, car, typeId, sort}})
     return data
 }
 
 export const fetchAutoPart = async(id) => {
-    const {data} = await $host.get("api/autoPart", {params: {id}})
+    const {data} = await $host.get("api/autoPart/" + id)
+    return data
+}
+
+export const deleteAutoPart = async(id, page, limit) => {
+    await $authHost.delete("api/autoPart", {params: {id}})
+    const {data} = await $host.get("api/autoPart", {params: {page, limit}})
     return data
 }

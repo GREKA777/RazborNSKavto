@@ -1,6 +1,6 @@
 const uuid = require('uuid')
 const path = require('path');
-const {Tiers} = require('../models/models')
+const {Tiers, Basket_All, Favourite_All, History_All} = require('../models/models')
 const ApiError = require('../error/ApiError')
 
 class TiersController {
@@ -17,47 +17,65 @@ class TiersController {
         }
 
     }
-
     async getAll(req, res) {
-        let {profile, diameter, width, limit, page} = req.query
+        let {profile, diameter, name, count, width, limit, page, sort} = req.query
+        let findFilter;
+        let sortTiers = [["createdAt", "DESC"]]
+        if (sort === 'PriceDown') {
+            sortTiers = [['price', 'DESC']]
+        }
+        if (sort === 'PriceUp') {
+            sortTiers = [['price', 'ASC']]
+        }
+        if (sort === 'TimeDown') {
+            sortTiers = [['createdAt', 'DESC']]
+        }
+        if (sort === 'TimeUp') {
+            sortTiers = [['createdAt', 'ASC']]
+        }
+        if (profile) {
+            findFilter = {profile}
+        }
+        if (diameter) {
+            findFilter = {...findFilter, diameter}
+        }
+        if (width) {
+            findFilter = {...findFilter, width}
+        }
+        if (count) {
+            findFilter = {...findFilter, count}
+        }
+        if (name) {
+            findFilter = {...findFilter, name}
+        }
+
         page = page || 1
         limit = limit || 9
         let offset = page * limit - limit
-        let tierss;
-        if (!profile && !diameter && !width) {
-            tierss = await Tiers.findAndCountAll({limit, offset})
-        }
-        if (profile && !diameter && !width) {
-            tierss = await Tiers.findAndCountAll({where: {profile}, limit, offset})
-        }
-        if (!profile && diameter && !width) {
-            tierss = await Tiers.findAndCountAll({where: {diameter}, limit, offset})
-        }
-        if (!profile && !diameter && width) {
-            tierss = await Tiers.findAndCountAll({where: {width}, limit, offset})
-        }
-        if (profile && diameter && width) {
-            tierss = await Tiers.findAndCountAll({where: {diameter, profile, width}, limit, offset})
-        }
-        if (profile && diameter && !width) {
-            tierss = await Tiers.findAndCountAll({where: {diameter, profile}, limit, offset})
-        }
-        if (!profile && diameter && width) {
-            tierss = await Tiers.findAndCountAll({where: {diameter, width}, limit, offset})
-        }
-        if (profile && !diameter && width) {
-            tierss = await Tiers.findAndCountAll({where: {width, profile}, limit, offset})
+
+        let tierss
+        if(findFilter ==={}){
+            tierss = await Tiers.findAndCountAll({order: sortTiers, limit, offset})
+        }else{
+            tierss = await Tiers.findAndCountAll({order: sortTiers, where: findFilter, limit, offset})
         }
         return res.json(tierss)
     }
 
     async getOne(req, res) {
         const {id} = req.params
-        const tiers = await Tiers.findOne(
-            {
-                where: {id}
-            },
-        )
+        const tiers = await Tiers.findOne({
+            where: {id}
+        })
+        return res.json(tiers)
+    }
+
+    async delete(req, res) {
+        const {id} = req.query
+        await Basket_All.destroy({where: {tierId: id}})
+        await Favourite_All.destroy({where: {tierId: id}})
+        await History_All.destroy({where: {tierId: id}})
+        const tiers = await Tiers.destroy({where: {id}})
         return res.json(tiers)
     }
 }

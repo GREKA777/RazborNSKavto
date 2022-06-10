@@ -4,7 +4,7 @@ const ItemPrice = ({autoPart}) => {
     return (
         <div className={styles.itemContent}>
             <div className={styles.itemName}>{autoPart.name || "Название"}</div>
-            <div className={styles.itemPrice}>{autoPart.price || "Цена"}p</div>
+            <div className={styles.itemPrice}>{autoPart.price || "Цена"} p</div>
         </div>
     );
 };

@@ -2,6 +2,8 @@ const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const {User, Basket, Favourite, Orders, History} = require('../models/models')
+const uuid = require("uuid");
+const path = require("path");
 
 const generateJwt = (id, FIO, email, role) => {
     return jwt.sign({id, FIO, email, role}, process.env.SECRET_KEY, {expiresIn: "24h"})
@@ -23,8 +25,8 @@ class UserController{
         const favourite = await Favourite.create({userId: user.id})
         const orders = await Orders.create({userId: user.id})
         const history = await History.create({userId: user.id})
-        const token = generateJwt(user.id, user.FIO, user.email, user.role)
-        return res.json({token})
+        const token = generateJwt(user.id, user.FIO, user.email, user.role, user.img)
+        return res.json({token, user})
     }
     async login(req, res, next){
         const {email, password} = req.body
@@ -36,12 +38,30 @@ class UserController{
         if (!comparePassword){
             return next(ApiError.internal("Указан неверный пароль"))
         }
-        const token = generateJwt(user.id, user.FIO, user.email, user.role)
-        return res.json({token})
+        const token = generateJwt(user.id, user.FIO, user.email, user.role, user.img)
+        return res.json({token, user})
     }
     async check(req, res){
-        const token = generateJwt(req.user.id, req.user.FIO, req.user.email, req.user.role)
-        return res.json({token})
+        const token = generateJwt(req.user.id, req.user.FIO, req.user.email, req.user.role, req.user.img)
+        const user = await User.findOne({where:{id:req.user.id}})
+        return res.json({token, user})
+    }
+    async updateImg(req, res){
+        const {id} = req.body
+        const {img} = req.files
+        let fileName = uuid.v4() + ".jpg"
+        img.mv(path.resolve(__dirname, '..', 'static', fileName))
+        const user = await User.findOne({where:{id}})
+        user.update({img: fileName})
+        const token = generateJwt(user.id, user.FIO, user.email, user.role, user.img)
+        return res.json({token, user})
+    }
+    async editProf(req, res){
+        const {id, name} = req.body
+        const user = await User.findOne({where: {id}})
+        user.update({FIO: name})
+        const token = generateJwt(user.id, user.FIO, user.email, user.role, user.img)
+        return res.json({token, user})
     }
 }
 

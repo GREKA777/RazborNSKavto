@@ -3,8 +3,8 @@ import styles from './Auth.module.css'
 import {useDispatch} from "react-redux";
 import {registration} from "../../http/userAPI";
 import {setIsAuthAC, setUserAC} from "../../redux/userReducer";
-import {useNavigate} from "react-router-dom";
-import {MAIN_ROUTE} from "../../utils/const";
+import {NavLink, useNavigate} from "react-router-dom";
+import {LOGIN_ROUTE, MAIN_ROUTE} from "../../utils/const";
 
 const Auth = () => {
     const dispatch = useDispatch()
@@ -42,6 +42,10 @@ const Auth = () => {
                     }}/>
                 </div>
                 <button className={styles.button} onClick={regClick}>Зарегистрироваться</button>
+                <div className={styles.log}>
+                    <div>Зарегистрированы?</div>
+                    <NavLink to={LOGIN_ROUTE} className={styles.bl}>Войти!</NavLink>
+                </div>
             </div>
         </div>
     );

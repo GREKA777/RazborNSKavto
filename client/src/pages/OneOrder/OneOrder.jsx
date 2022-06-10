@@ -2,8 +2,10 @@ import React from 'react';
 import styles from './OneOrder.module.css'
 import mainAbout from '../../assets/mainAbout.jpg'
 import Foot from "../../components/Foot/Foot";
+import {useParams} from "react-router-dom";
 
 const OneOrder = () => {
+    const {id} = useParams()
     return (
         <div>
             <div className={styles.orderAll}>

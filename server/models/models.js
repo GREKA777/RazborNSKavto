@@ -30,7 +30,8 @@ const User = sequelize.define("user", {
     email: {type: DataTypes.STRING, allowNull: false, unique: true},
     phone: {type: DataTypes.STRING, unique: true},
     password: {type: DataTypes.STRING, allowNull: false},
-    role: {type: DataTypes.STRING, allowNull: false, defaultValue: "USER"}
+    role: {type: DataTypes.STRING, allowNull: false, defaultValue: "USER"},
+    img: {type: DataTypes.STRING}
 })
 
 const Favourite = sequelize.define("favourite", {

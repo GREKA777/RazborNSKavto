@@ -11,6 +11,11 @@ class ConnectController{
         const connects = await Connect.findAll()
         return res.json(connects)
     }
+    async delete(req, res) {
+        const {id} = req.query
+        const connect = await Connect.destroy({where: {id}})
+        return res.json(connect)
+    }
 }
 
 module.exports = new ConnectController()

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import styles from './AuthLogin.module.css'
 import {useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {setIsAuthAC, setUserAC} from "../../../redux/userReducer";
-import {MAIN_ROUTE} from "../../../utils/const";
+import {AUTH_ROUTE, MAIN_ROUTE} from "../../../utils/const";
 import {login} from "../../../http/userAPI";
 
 const AuthLogin = () => {
@@ -36,6 +36,10 @@ const AuthLogin = () => {
                     }}/>
                 </div>
                 <button className={styles.button} onClick={regClick}>Войти</button>
+                <div className={styles.log}>
+                <div>Нет профиля?</div>
+                    <NavLink to={AUTH_ROUTE} className={styles.bl}>Зарегестрируйся!</NavLink>
+                </div>
             </div>
         </div>
     );

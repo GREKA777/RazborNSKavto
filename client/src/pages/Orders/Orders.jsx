@@ -13,9 +13,12 @@ const Orders = () => {
             <div className={styles.orderAll}>
                 <h2 className={styles.order}>Заказы</h2>
             </div>
-            <div className={styles.cards}>
-                {order}
-            </div>
+            {orders.length === 0 ?
+                <div className={styles.notFound}>Ничего не удалось найти</div> :
+                <div className={styles.cards}>
+                    Ни одного заказа не оформлено.
+                </div>
+            }
             <Foot/>
         </div>
     );

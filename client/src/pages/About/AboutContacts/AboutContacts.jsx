@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './AboutContacts.module.css'
-import map from '../../../assets/map.png'
 const AboutContacts = () => {
+    useEffect(() => {
+        let script = document.createElement('script');
+        script.src = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A818ddd50a55cbf0df4d61e2356ec812c1185901f57f24f23cf4332d296918cf5&amp;width=400&amp;height=300&amp;lang=ru_RU&amp;scroll=true";
+        document.getElementById('yamap').replaceWith(script);
+    }, [])
     return (
         <div className={styles.allContacts}>
             <div className={styles.aboutContactsHead}>Контактная информация</div>
@@ -16,13 +20,13 @@ const AboutContacts = () => {
             <div>
                 <div className={styles.aboutContactsTextt}>+7 923 777 06 08</div>
                 <div className={styles.aboutContactsTextt}>+7 923 777 06 08</div>
-                <div className={styles.aboutContactsTextt}>egorka.gre4ko2015@gmail.com</div>
-                <div className={styles.aboutContactsTextt}>пн-пт: 14:00-23:00, сб-вс: 15:00-21:00</div>
-                <div className={styles.aboutContactsTextt}>г. Новосибирск, р-н Советский, ул. Иванова, д. 32, оф. 136</div>
+                <div className={styles.aboutContactsTextt}>razbornskavto@yandex.ru</div>
+                <div className={styles.aboutContactsTextt}>пн-пт: 9:00-21:00, сб-вс: 11:00-21:00</div>
+                <div className={styles.aboutContactsTextt}>г. Новосибирск, р-н Кировский, ул. Северный проезд, д. 7, оф.2</div>
             </div>
             </div>
-            <div>
-                <img src={map} alt="Местоположение на карте" className={styles.map}/>
+            <div className={styles.map}>
+                <div id={"yamap"} ></div>
             </div>
         </div>
     );

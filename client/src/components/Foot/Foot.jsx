@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 import city from "../../assets/city.png";
 import phone from "../../assets/phone.png";
 import {NavLink} from "react-router-dom";
-import {ABOUT_US_ROUTE, CATALOG_ROUTE, TIRES_ROUTE} from "../../utils/const";
+import {ABOUT_US_ROUTE, CATALOG_ROUTE, PUTIN_ROUTE, TIRES_ROUTE} from "../../utils/const";
 
 const Foot = () => {
     return (
@@ -33,16 +33,12 @@ const Foot = () => {
 
             </div>
             <div className={styles.footBlok3}>
-                <h4 className={styles.footName}>ООО "RazborNSKavto"</h4>
-                <p className={styles.footText}>ИНН 540821892800</p>
-                <p className={styles.footText}>ОГРН 102457582883592</p>
+                <h4 className={styles.footName}>ООО "Автобаза"</h4>
+                <p className={styles.footText}>ИНН 5404365990</p>
+                <p className={styles.footText}>КПП 540401001</p>
+                <p className={styles.footText}>ОГРН 1085404019238</p>
 
-
-                <NavLink className={styles.footLink} to={ABOUT_US_ROUTE}>Политика конфиденциальности</NavLink>
-
-
-                <NavLink className={styles.footLink} to={ABOUT_US_ROUTE}>Пользовательское соглашение</NavLink>
-
+                <NavLink className={styles.footLink} to={PUTIN_ROUTE}>Политика конфиденциальности</NavLink>
 
             </div>
         </footer>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MainAbout.module.css'
-import mainAbout from '../../../assets/mainAbout.jpg'
+import mainaboutt from '../../../assets/mainaboutt.jpg'
 import speed from '../../../assets/speed.png'
 import secure from '../../../assets/secure.png'
 import finger from '../../../assets/finger.png'
@@ -11,7 +11,7 @@ const MainAbout = () => {
         <div>
             <h2 className={styles.mainAboutHead}>Почему мы?</h2>
             <div className={styles.grid}>
-                <img src={mainAbout} alt="" className={styles.mainAboutPicture}/>
+                <img src={mainaboutt} alt="" className={styles.mainAboutPicture}/>
 
                 <div className={styles.gridd}>
                     <div className={styles.centergrids}>

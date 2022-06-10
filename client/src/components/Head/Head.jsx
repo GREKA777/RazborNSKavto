@@ -7,18 +7,20 @@ import {
     TIRES_ROUTE,
     PROFILE_ROUTE,
     BASKET_ROUTE,
-    LOGIN_ROUTE, AUTH_ROUTE
+    LOGIN_ROUTE, AUTH_ROUTE, FAVOURITE_ROUTE
 } from "../../utils/const";
 import styles from './Head.module.css'
 import logo from '../../assets/logo.png'
 import profile from '../../assets/profile.png'
 import basket from '../../assets/basket.png'
+import favourite from '../../assets/favourite.png'
 import {useDispatch, useSelector} from "react-redux";
 import {setIsAuthAC, setUserAC} from "../../redux/userReducer";
 
 
 const Head = () => {
     const dispatch = useDispatch()
+    const user = useSelector(state => state.userData.user)
     const isAuth = useSelector(state => state.userData.isAuth)
     const logOut = () => {
         dispatch(setUserAC({}))
@@ -41,14 +43,14 @@ const Head = () => {
                 </li>
             </ul>
             <NavLink className={styles.headButtonn} to={MAIN_ROUTE}><img src={logo} alt="RazborNSKavto"/></NavLink>
-            <input type="text" placeholder={"Поиск"} className={styles.search}/>
             {isAuth ? <div className={styles.profile}>
-                <NavLink className={styles.profileButton} to={PROFILE_ROUTE}><img src={profile} alt="Профиль" className={styles.profileLogo}/></NavLink>
+                <NavLink className={styles.profileButton} to={PROFILE_ROUTE}><img src={user.img?'http://localhost:5000/' + user.img:profile} alt="Профиль" className={styles.profileLogo}/></NavLink>
                 <div className={styles.prof}>
                     <div><button className={styles.buttonGoo} onClick={() => navigate(PROFILE_ROUTE)}>Профиль</button></div>
                     <div><button className={styles.buttonOut} onClick={logOut}>Выход</button></div>
                 </div>
                     <NavLink className={styles.basketButton} to={BASKET_ROUTE}><img src={basket} alt="Корзина" className={styles.basketLogo}/></NavLink>
+                    <NavLink className={styles.basketButton} to={FAVOURITE_ROUTE}><img src={favourite} alt="Избранное" className={styles.basketLogo}/></NavLink>
                 </div>:
                 <div className={styles.log}>
                 <div><button className={styles.buttonGo} onClick={() => navigate(LOGIN_ROUTE)}>Вход</button></div>

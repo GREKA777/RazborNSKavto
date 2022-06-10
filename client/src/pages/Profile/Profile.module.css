@@ -21,7 +21,7 @@
 .profileBody{
     display: flex;
     margin-left: -20px;
-    padding-bottom: 200px;
+    padding-bottom: 80px;
 }
 .profileBodyText{
     font-family: 'Russo One';
@@ -35,8 +35,23 @@
     font-weight: 400;
     font-size: 20px;
     color: white;
-    margin-top: 20px;
+    width: 300px;
     margin-left: 20px;
+    background: transparent;
+    border: none;
+    outline: 0;
+}
+.profileBodyFactt{
+    font-family: Comfortaa;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    width: 300px;
+    margin-left: 20px;
+    background: transparent;
+    border: 1px solid #86C232;
+    height: 30px;
+    margin-top: 15px;
 }
 .profileBodyAll{
     display: flex;
@@ -44,6 +59,19 @@
     margin-top: 20px;
 }
 .photoButton{
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    padding: 12px 8px;
+    /*width: 200px;*/
+    /*height: 40px;*/
+    color: #fff;
+    background-color: #61892F;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+}
+.editButton{
     font-family: 'Comfortaa';
     width: 200px;
     height: 40px;
@@ -53,8 +81,9 @@
     border-radius: 20px;
     border: none;
     margin-top: 20px;
+    margin-left: 20px;
 }
-.editButton{
+.saveButton{
     font-family: 'Comfortaa';
     width: 200px;
     height: 40px;
@@ -75,7 +104,7 @@
     cursor: pointer;
     border-radius: 20px;
     border: none;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     margin-left: 60px;
     display: block;
 
@@ -88,4 +117,14 @@
 }
 .buttons{
     display: flex;
+}
+.red{
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+}
+.buttonsProfileee{
+    text-decoration: none;
 }

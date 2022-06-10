@@ -38,3 +38,15 @@
     margin-left: 560px;
     margin-top: 20px;
 }
+.log{
+    margin-left: 515px;
+    margin-top: 20px;
+    color: #86C232;
+    display: flex;
+}
+.bl{
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #61892F;
+}

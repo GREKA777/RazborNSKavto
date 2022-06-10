@@ -10,33 +10,63 @@
     background-color: #161A1D;
     padding-bottom: 100px;
     overflow: hidden;
+  position: relative;
 }
-.feedbackpeopleleft{
+
+.rightBlock {
+  display: flex;
+  left: 1060px;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.leftBlock {
+  display: flex;
+  right: 1030px;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.mainBlock {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left{
     border-radius: 17px;
     background-color: #222629;
     width: 440px;
     height: 200px;
-    /*margin-left: 370px;*/
     margin-top: 50px;
-    margin-left: -100px;
+    margin-right: 20px;
+    overflow: hidden;
 }
-.feedbackpeoplemain{
+.center{
     border-radius: 17px;
     background-color: white;
     width: 540px;
     height: 300px;
-    /*margin-left: 370px;*/
     margin-left: 40px;
     margin-right: 40px;
+  transition: 0.5s;
+  /*position: absolute;*/
 }
-.feedbackpeopleright{
+
+.centerLeft {
+  color: #fff;
+
+}
+
+.right{
     border-radius: 17px;
     background-color: #222629;
     width: 440px;
     height: 200px;
     /*margin-left: 370px;*/
     margin-top: 50px;
-    margin-right: -100px;
+    margin-right: 20px;
+    overflow: hidden;
 }
 .nameFeedback{
     margin-left: 170px;
